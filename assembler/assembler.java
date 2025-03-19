@@ -139,7 +139,7 @@ public class assembler{
     }
 
     public static void writeHack(String filename){
-        try (FileWriter hackFile = new FileWriter(filename + ".hack")) {
+        try (FileWriter hackFile = new FileWriter("assembler\\Results\\"+ filename + ".hack")) {
             for (String command : asm) {
                 if (command.startsWith("@")) { // A-instruction
                     int address = Integer.valueOf(symbols.getOrDefault(command.substring(1), command.substring(1)));
